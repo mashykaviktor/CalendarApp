@@ -1,8 +1,94 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# 📌 React Native - Calendar Spike
+
+## 📝 Overview
+
+Our current **DatePicker (`react-native-modal-datetime-picker`)** has **limitations in disabling specific dates**. The goal of this spike was to explore alternative calendar libraries that allow disabling specific dates while integrating smoothly with our **modal/bottom sheet component**.
+
+Over **15 different libraries** were reviewed, and the **top 3 choices** that best met our main requirements were:
+
+1. **react-native-calendars** (Final choice ✅)
+2. **react-native-calendar-picker**
+3. **react-native-ui-datepicker**
+
+---
+
+## 🔎 Evaluation Criteria
+
+Each library was assessed based on:
+
+- ✅ **Calendar View** (Full calendar display, not just a date picker)
+- ✅ **Disabling Specific Dates** (Ability to prevent selection of certain dates)
+- ✅ **Modal Integration** (Works well inside our bottom sheet/modal component)
+- ✅ **Cross-Platform Support** (Works on both iOS & Android)
+- ✅ **Popularity & Maintenance** (Community adoption and update frequency)
+
+---
+
+## 🏆 Top 3 Calendar Libraries Reviewed
+
+### 1️⃣ react-native-calendars (✅ **Final Choice**)
+
+- **✅ Advantages:**
+
+  - Highly customizable with different calendar views (e.g., agenda, week view, marking styles)
+  - **Supports disabling specific dates** via the `markedDates` and `disableTouchEvent` props
+  - Large community support and actively maintained
+  - Smooth integration inside a modal or bottom sheet
+  - Works well with both iOS and Android
+
+- **❌ Disadvantages:**
+  - Requires additional styling for a native feel
+  - Slightly larger package size
+
+---
+
+### 2️⃣ react-native-calendar-picker
+
+- **✅ Advantages:**
+
+  - Simple, lightweight, and easy to integrate
+  - Supports **disabling specific dates** via the `disabledDates` prop
+  - Works smoothly in a **modal or bottom sheet**
+
+- **❌ Disadvantages:**
+  - **Lacks built-in animations** for better UX
+  - Not as customizable as `react-native-calendars`
+
+---
+
+### 3️⃣ react-native-ui-datepicker
+
+- **✅ Advantages:**
+
+  - Customizable, modern design
+  - Works well inside a **bottom sheet**
+  - Supports **disabling specific dates**
+
+- **❌ Disadvantages:**
+  - Smaller community support than other options
+  - Requires **manual date handling with Day.js**
+
+---
+
+## 🏆 Final Decision: `react-native-calendars`
+
+After evaluating multiple options, we **chose `react-native-calendars` as the best library** for our project because:
+
+- **✅ Best support for disabling dates** (via `disableTouchEvent`)
+- **✅ Rich feature set** (multiple calendar views, custom marking)
+- **✅ Well-maintained** with frequent updates
+- **✅ Large community support & documentation**
+- **✅ Works well inside a modal or bottom sheet**
+
+While **`react-native-calendar-picker`** and **`react-native-ui-datepicker`** are good alternatives, **they lack the extensive feature set and community support** provided by `react-native-calendars`.
+
+---
+
+## ✅ Conclusion
+
+This spike successfully identified the best calendar solution for our app. By switching to **`react-native-calendars`**, we gain **better date disabling, customization, and community support**, making it the best choice for our React Native CLI project. 🚀
 
 # Getting Started
-
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
 
 ## Step 1: Start Metro
 
@@ -61,37 +147,3 @@ yarn ios
 If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
 
 This is one way to run your app — you can also build it directly from Android Studio or Xcode.
-
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
